@@ -150,7 +150,7 @@ function Register() {
             style={{
                 marginTop: topNavbarHeight + 'px'
             }}
-            className='py-20 container mx-auto'
+            className='py-20 container mx-auto md:px-0 px-5'
         >
             <div className="flex items-center gap-x-20">
                 <div className="hidden md:block w-1/2">
