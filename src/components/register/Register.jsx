@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../firebase/config';
-import {  useState } from 'react';
+import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc';
@@ -15,7 +15,7 @@ import { FcGoogle } from 'react-icons/fc';
 function Register() {
 
 
-    
+
 
     const nav = useNavigate();
 
@@ -123,18 +123,18 @@ function Register() {
         e.target.previousElementSibling.classList.add("text-gray-300");
     }
 
-   
+
     const googleSign = () => {
 
         console.log(1);
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                localStorage.setItem("userAccessToken", user.accessToken );
+                localStorage.setItem("userAccessToken", user.accessToken);
 
                 dispatch(setUser(user));
                 nav("/products");
-                
+
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -145,7 +145,7 @@ function Register() {
 
     }
 
-        return (
+    return (
         <div
             style={{
                 marginTop: topNavbarHeight + 'px'
@@ -153,11 +153,11 @@ function Register() {
             className='py-20 container mx-auto'
         >
             <div className="flex items-center gap-x-20">
-                <div className="w-1/2">
+                <div className="hidden md:block w-1/2">
                     <Terminal />
                 </div>
 
-                <div className=" w-1/2 shadow-2xl py-10 border theme-border-color rounded-2xl">
+                <div className="w-full md:w-1/2 shadow-2xl py-10 border theme-border-color rounded-2xl">
 
 
                     <h2 className='protest-font text-2xl md:text-5xl text-center theme-text-color'>
